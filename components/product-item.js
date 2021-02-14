@@ -28,19 +28,20 @@ class ProductItem extends HTMLElement {
 
     // construct title element
     const title = document.createElement("p")
-    outerLi.setAttribute("class","title")
+    title.setAttribute("class","title")
     title.appendChild(document.createTextNode(this.prop.title))
 
     // construct price element
     const price = document.createElement("p")
-    outerLi.setAttribute("class","price")
-    price.appendChild(document.createTextNode(this.prop.price))
+    price.setAttribute("class","price")
+    price.appendChild(document.createTextNode("$"+this.prop.price))
 
     // description is not mentioned so it will not be handled
 
     // construct add to cart button element.
     // Note that the add to cart functionality will be handled by script.js
     const cartBtn = document.createElement("button")
+    cartBtn.setAttribute("id","btn"+this.prop.id)
     cartBtn.appendChild(document.createTextNode("Add to Cart"))
 
     // node cascading
